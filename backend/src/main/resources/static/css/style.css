@@ -1,0 +1,209 @@
+:root {
+    --primario: #00534c;
+    --secundario: #00a499;
+    --terciario: #6bcaba;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*,*:before, *:after{
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Montserrat';
+    font-size: 1.6rem;
+    margin: 0;
+    background-color: var(--primario);
+    color: white;
+}
+p{
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 0.5;
+}
+h1 {
+    font-size: 4rem;
+    color: #212529;
+}
+h4 {
+    font-weight: 500;
+}
+.contenedor {
+    width: min(90%, 120rem);
+    margin: 0 auto;
+}
+.barra   {
+    height: 9rem;
+    align-content: center;
+    background-color: var(--secundario);
+}
+.barra2 {
+    height: 1.5rem;
+    background-color: var(--terciario);
+}
+.logoTecmi {
+    display: flex;
+    justify-content: center;
+}
+.logoTecmi2 {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+}
+.logoTecmi2 img{
+    width: 15rem;
+    height: 4.05rem;
+    margin-bottom: 1rem;
+}
+.datos {
+    height: 66.2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+.informacion {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.informacion .nombre {
+    line-height: 1;
+}
+.fotografia img{
+    width: 50rem;
+    height: 50rem;
+}
+.section {
+    display: flex;
+    justify-content: center;
+    margin-top: 8rem;
+}
+.login {
+    background-color: white;
+    width: 30rem;
+    height: 43rem;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+.login fieldset {
+    border: none;
+}
+.login legend {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+.campo {
+    margin-bottom: 1rem
+}
+.campo label {
+    color: var(--primario);
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+.campo ::placeholder {
+    color: lightgrey;
+}
+.input-text {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: 0.1rem solid #ccc;
+    border-radius: 4px;
+}
+.enviar {
+    display: flex;
+    justify-content: right;
+}
+.button {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.forgot-password {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}.forgot-password a {
+     color: #00796b;
+     font-size: 1.2rem;
+     text-decoration: none;
+ }
+fieldset {
+    justify-content: center;
+}
+.logo {
+    margin: 30px 0;
+}
+
+.logo img {
+    width: 300px;
+}
+
+.formulario {
+    width: 100%;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.campo-entrada {
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.boton-registrar {
+    grid-column: 1 / -1;
+    background-color: #1d4b43;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 200px;
+    margin: 20px auto 0;
+}
+
+.boton-registrar:hover {
+    background-color: #153832;
+}
+
+.input-file {
+    display: none;
+}
+
+.boton-subir-foto {
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    color: #555;
+}
+
+.boton-subir-foto:hover {
+    background-color: #d5d5d5;
+}

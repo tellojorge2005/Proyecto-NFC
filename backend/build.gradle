@@ -1,0 +1,27 @@
+plugins {
+    id 'org.springframework.boot' version '3.0.0'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.nfcproject'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '17' // Ajusta la versión de Java si es diferente
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+     // Dependencia para controladores y APIs REST en Spring Boot
+     implementation 'org.springframework.boot:spring-boot-starter-web'
+// Dependencia para pruebas con JUnit
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation files('lib/mysql-connector-j-9.1.0.jar')
+}
+
+test {
+    useJUnitPlatform()
+}
