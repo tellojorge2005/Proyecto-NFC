@@ -10,6 +10,7 @@
 
     <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/login.js"></script>
 
     <title>Document</title>
 </head>
@@ -29,17 +30,18 @@
                 <div>
                     <div class="campo">
                         <label>Usuario</label>
-                        <input class="input-text" type="text" placeholder="usuario">
+                        <input class="input-text" type="text" id="correo" placeholder="usuario" required>
                     </div>
                     <div class="campo">
                         <label>Contraseña</label>
-                        <input class="input-text" type="password" placeholder="contraseña">
+                        <input class="input-text" type="password" id="contraseña" placeholder="contraseña" required>
                     </div>
                 </div>
                 <div class="enviar">
                     <a href="admin.html">
                         <input class="button" type="button" value="Siguiente">
                     </a>
+                    <p id="mensaje"></p>
                 </div>
                 <div class="forgot-password">
                     <a href="index.html" >¿Eres de seguridad?</a>

@@ -119,15 +119,15 @@ h4 {
 }
 .enviar {
     display: flex;
-    justify-content: right;
+    justify-content: center;
 }
 .button {
     background-color: #00796b;
     color: white;
     border: none;
     padding: 1rem;
-    width: 100%;
-    border-radius: 4px;
+    width: 20rem;
+    border-radius: 0.4rem;
     cursor: pointer;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -144,66 +144,60 @@ h4 {
 fieldset {
     justify-content: center;
 }
-.logo {
-    margin: 30px 0;
-}
-
-.logo img {
-    width: 300px;
-}
-
 .formulario {
     width: 100%;
-    max-width: 800px;
+    max-width: 80rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 20px;
+    gap: 2rem;
+    padding: 2rem;
+    margin-top: 5rem;
 }
-
 .campo-entrada {
     background-color: #e0e0e0;
-    padding: 15px;
-    border-radius: 8px;
+    padding: 1.5rem;
+    border-radius: 0.8rem;
     border: none;
-    font-size: 16px;
+    font-size: 1.6rem;
     width: 100%;
     box-sizing: border-box;
 }
-
 .boton-registrar {
     grid-column: 1 / -1;
-    background-color: #1d4b43;
+    background-color: var(--primario);
     color: white;
-    padding: 15px;
+    padding: 1.5rem;
     border: none;
-    border-radius: 8px;
-    font-size: 18px;
+    border-radius: 0.8rem;
+    font-size: 1.8rem;
     cursor: pointer;
-    width: 200px;
-    margin: 20px auto 0;
+    width: 20rem;
+    margin: 2rem auto 0;
 }
-
 .boton-registrar:hover {
-    background-color: #153832;
+    background-color: var(--secundario);
 }
-
 .input-file {
     display: none;
 }
-
 .boton-subir-foto {
     background-color: #e0e0e0;
-    padding: 15px;
-    border-radius: 8px;
+    padding: 1.5rem;
+    border-radius: 0.8rem;
     border: none;
-    font-size: 16px;
+    font-size: 1.6rem;
     cursor: pointer;
     width: 100%;
     text-align: left;
     color: #555;
 }
-
 .boton-subir-foto:hover {
     background-color: #d5d5d5;
+}
+.fondo-blanco {
+    background-color: white;
+}
+.centrar {
+    display: flex;
+    justify-content: center;
 }

@@ -15,15 +15,15 @@ function leerNFC() {
                 document.getElementById('foto').src = data.fotografia;
                 document.getElementById('nivel').innerText = data.grado_academico;
                 document.getElementById('campus').innerText = data.campus;
+                document.getElementById('resultado').innerText = "Bienvenido :)";
 
                 // Reinicia el temporizador para restablecer la información
                 reiniciarTemporizador();
             } else if (data.mensaje === "Acceso denegado") {
                 // Si el mensaje es "Acceso denegado", muestra el mensaje en el resultado
                 document.getElementById('resultado').innerText = "Acceso denegado";
+                reiniciarTemporizador();
 
-                // También puedes restablecer la información a los valores predeterminados
-                restablecerInformacionDefault();
             } else {
                 // Si hay otro mensaje o error
                 document.getElementById('resultado').innerText = data.mensaje || "Error desconocido";
