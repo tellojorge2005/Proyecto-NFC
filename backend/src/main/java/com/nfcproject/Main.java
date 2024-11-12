@@ -7,6 +7,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
+import java.util.HashMap;
 
 @SpringBootApplication
 @RestController
@@ -84,6 +89,25 @@ public class Main {
                 e.printStackTrace();
             }
         }
+    }
+    @Autowired
+    private Autenticador autenticador;
+
+    @PostMapping("/api/login")
+    public Map<String, String> login(@RequestBody Map<String, String> credentials) {
+        String correo = credentials.get("correo");
+        String contra = credentials.get("contraseña");
+
+        String rol = autenticador.authenticateUser(correo, contra);
+
+        Map<String, String> response = new HashMap<>();
+        if (!"invalido".equals(rol)) {
+            response.put("mensaje", "Autenticación exitosa");
+            response.put("rol", rol); // Devolver el rol del usuario
+        } else {
+            response.put("mensaje", "Credenciales incorrectas");
+        }
+        return response;
     }
 
     public static String bytesToHex(byte[] bytes) {

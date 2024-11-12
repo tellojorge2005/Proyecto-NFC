@@ -21,7 +21,12 @@ function leerNFC() {
                 reiniciarTemporizador();
             } else if (data.mensaje === "Acceso denegado") {
                 // Si el mensaje es "Acceso denegado", muestra el mensaje en el resultado
-                document.getElementById('resultado').innerText = "Acceso denegado";
+                document.getElementById('nombre').innerHTML = `<strong>Acceso denegado</strong>`;
+                document.getElementById('matricula').innerText = "";
+                document.getElementById('foto').src = "/img/DENEGADO.png";
+                document.getElementById('nivel').innerText = "";
+                document.getElementById('campus').innerText ="";
+                document.getElementById('resultado').innerText ="";
                 reiniciarTemporizador();
 
             } else {

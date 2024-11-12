@@ -76,6 +76,8 @@ h4 {
     width: 50rem;
     height: 50rem;
 }
+
+/* LOGIN */
 .section {
     display: flex;
     justify-content: center;
@@ -84,7 +86,7 @@ h4 {
 .login {
     background-color: white;
     width: 30rem;
-    height: 43rem;
+    height: 45rem;
     padding: 2rem;
     border-radius: 1rem;
 }
@@ -119,7 +121,8 @@ h4 {
 }
 .enviar {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .button {
     background-color: #00796b;
@@ -127,6 +130,7 @@ h4 {
     border: none;
     padding: 1rem;
     width: 20rem;
+    height: 4rem;
     border-radius: 0.4rem;
     cursor: pointer;
     margin-top: 1rem;
@@ -135,7 +139,6 @@ h4 {
 .forgot-password {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
 }.forgot-password a {
      color: #00796b;
      font-size: 1.2rem;
@@ -144,6 +147,8 @@ h4 {
 fieldset {
     justify-content: center;
 }
+
+/* ADMIN */
 .formulario {
     width: 100%;
     max-width: 80rem;
@@ -200,4 +205,54 @@ fieldset {
 .centrar {
     display: flex;
     justify-content: center;
+}
+
+/* Tablero */
+.clasescont {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    width: 70%;
+    max-width: 110rem;
+    padding: 2rem;
+    margin-top: 5rem;
+}
+
+.class-card {
+    background-color: #ffffff;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+.class-card:hover {
+    transform: scale(1.02);
+}
+.class-header {
+    height: 10rem;
+    background-color: #c49b36; /* Cambia el color según la clase */
+}
+.class-details {
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: #555;
+}
+.class-title {
+    font-weight: bold;
+    color: #804a00;
+    margin-bottom: 0.5rem;
+}
+.parrafo-login {
+    font-size: 1rem;
+    color: black;
+}
+.barra-verde-primario{
+    background-color: var(--primario);
+}
+.barra-verde-secundario{
+    background-color: var(--secundario);
+}
+.barra-verde-terciario
+{
+    background-color: var(--terciario);
 }

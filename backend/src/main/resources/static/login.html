@@ -10,14 +10,13 @@
 
     <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/login.js"></script>
 
     <title>Document</title>
 </head>
 <body>
 <header>
-    <div class="barra2"></div>
-    <div class="barra ">
+    <div class="barra2 barra-verde-terciario"></div>
+    <div class="barra barra-verde-secundario">
         <div class="contenedor logoTecmi"><a href="login.html"><img src="img/logoTecmilenio.png" alt="Logo Tecmilenio"></a></div>
     </div>
 </header>
@@ -38,10 +37,8 @@
                     </div>
                 </div>
                 <div class="enviar">
-                    <a href="admin.html">
-                        <input class="button" type="button" value="Siguiente">
-                    </a>
-                    <p id="mensaje"></p>
+                    <input class="button" type="button" onclick="login()" value="Siguiente">
+                    <p id="mensaje" class="parrafo-login"></p>
                 </div>
                 <div class="forgot-password">
                     <a href="index.html" >¿Eres de seguridad?</a>
@@ -51,6 +48,7 @@
     </section>
 </div>
 
+<script src="js/login.js"></script>
 </body>
 
 </html>
