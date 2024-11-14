@@ -252,7 +252,36 @@ fieldset {
 .barra-verde-secundario{
     background-color: var(--secundario);
 }
-.barra-verde-terciario
-{
+.barra-verde-terceario{
     background-color: var(--terciario);
+}
+.lista-h2 {
+    text-align: center;
+    color: black;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: black;
+}
+
+th {
+    background-color: #004D40;
+    color: #fff;
+}
+
+.checkbox {
+    display: flex;
+    justify-content: center;
+}
+.with70 {
+    width: 70%;
 }
