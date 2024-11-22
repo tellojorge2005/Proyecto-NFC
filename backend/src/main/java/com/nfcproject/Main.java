@@ -13,6 +13,8 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.HashMap;
 
+import java.util.Base64; // Importa esta clase para la codificación en Base64
+
 @SpringBootApplication
 @RestController
 public class Main {
@@ -55,7 +57,7 @@ public class Main {
 
             // Consulta SQL para buscar el UID en la base de datos
             statement = connection.createStatement();
-            String query = "SELECT nombre, apellidos, matricula, fotografia, grado_academico, campus FROM alumno WHERE nfc = '" + uidHex + "'";
+            String query = "SELECT nombre, apellidos, matricula, fotografia, grado_academico, campus, mime_type FROM alumno WHERE nfc = '" + uidHex + "'";
             resultSet = statement.executeQuery(query);
 
             if (resultSet.next()) {
@@ -63,7 +65,9 @@ public class Main {
                 String nombre = resultSet.getString("nombre");
                 String apellidos = resultSet.getString("apellidos");
                 String matricula = resultSet.getString("matricula");
-                String fotografia = resultSet.getString("fotografia");
+                String mimeType = resultSet.getString("mime_type"); // Recupera el tipo MIME de la base de datos
+                byte[] fotoBytes = resultSet.getBytes("fotografia"); // Recupera los bytes de la imagen
+                String fotografiaBase64 = "data:" + mimeType + ";base64," + Base64.getEncoder().encodeToString(fotoBytes);
                 String gradoAcademico = resultSet.getString("grado_academico");
                 String campus = resultSet.getString("campus");
 
@@ -71,7 +75,7 @@ public class Main {
 
                 return String.format(
                         "{\"nombre\": \"%s\", \"apellidos\": \"%s\", \"matricula\": \"%s\", \"fotografia\": \"%s\", \"grado_academico\": \"%s\", \"campus\": \"%s\"}",
-                        nombre, apellidos, matricula, fotografia, gradoAcademico, campus);
+                        nombre, apellidos, matricula, fotografiaBase64, gradoAcademico, campus);
             } else {
                 // Si no se encuentra el UID, devolver "Acceso denegado"
                 card.disconnect(false);
@@ -109,6 +113,7 @@ public class Main {
         }
         return response;
     }
+
 
     public static String bytesToHex(byte[] bytes) {
         StringBuilder sb = new StringBuilder();

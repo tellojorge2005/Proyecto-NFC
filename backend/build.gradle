@@ -15,11 +15,13 @@ repositories {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-     // Dependencia para controladores y APIs REST en Spring Boot
-     implementation 'org.springframework.boot:spring-boot-starter-web'
+    // Dependencia para controladores y APIs REST en Spring Boot
+    implementation 'org.springframework.boot:spring-boot-starter-web'
 // Dependencia para pruebas con JUnit
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation files('lib/mysql-connector-j-9.1.0.jar')
+
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 }
 
 test {

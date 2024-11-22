@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Asistencia</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,8 +11,6 @@
 
     <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css">
-
-    <title>Document</title>
 </head>
 <body class="fondo-blanco">
 <header>
@@ -23,7 +22,6 @@
 
 <h2 class="lista-h2">Lista de Asistencia</h2>
 <div class="contenedor centrar with70">
-
     <table>
         <thead>
         <tr>
@@ -31,28 +29,12 @@
             <th>Asistencia</th>
         </tr>
         </thead>
-        <tbody>
-        <tr>
-            <td>Emiliano Leos</td>
-            <td class="checkbox"><input type="checkbox" name="asistencia1"></td>
-        </tr>
-        <tr>
-            <td>Jorge Tello</td>
-            <td class="checkbox"><input type="checkbox" name="asistencia2"></td>
-        </tr>
-        <tr>
-            <td>Kevin Rucoba</td>
-            <td class="checkbox"><input type="checkbox" name="asistencia3"></td>
-        </tr>
-        <tr>
-            <td>Ana Torres</td>
-            <td class="checkbox"><input type="checkbox" name="asistencia4"></td>
-        </tr>
-        <!-- Puedes agregar más estudiantes aquí -->
+        <tbody id="tabla-estudiantes">
+        <!-- Los estudiantes serán agregados dinámicamente aquí -->
         </tbody>
     </table>
 </div>
 
+<script src="js/lista.js"></script>
 </body>
-
 </html>

@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="css/style.css">
 
     <title>Document</title>
+    <script>
+        function guardarMateria(materia) {
+            sessionStorage.setItem("materiaSeleccionada", materia);
+        }
+    </script>
 </head>
 <body class="fondo-blanco">
 <header>
@@ -22,32 +27,35 @@
 </header>
 <div class="contenedor centrar">
     <div class="clasescont">
-        <div class="class-card">
-            <div class="class-header"></div>
-            <div class="class-details">
-                <div class="class-title">Español</div>
-            </div>
-        </div>
-        <a href="lista.html">
+
+        <a href="lista.html" onclick="guardarMateria('Introducción a la ingeniería de software')">
             <div class="class-card">
-                <div class="class-header" style="background-color: #77b300;"></div>
+                <div class="class-header"></div>
                 <div class="class-details">
-                    <div class="class-title">Física</div>
+                    <div class="class-title">Introducción a la ingeniería de software</div>
                 </div>
             </div>
         </a>
-        <div class="class-card">
-            <div class="class-header" style="background-color: #C00C09;"></div>
-            <div class="class-details">
-                <div class="class-title">Matematicas</div>
+
+        <a href="lista.html" onclick="guardarMateria('Fundamentos de programación')">
+            <div class="class-card">
+                <div class="class-header" style="background-color: #77b300;"></div>
+                <div class="class-details">
+                    <div class="class-title">Fundamentos de programación</div>
+                </div>
             </div>
-        </div>
-        <div class="class-card">
-            <div class="class-header" style="background-color: #C4D4E0;"></div>
-            <div class="class-details">
-                <div class="class-title">Ingles</div>
+        </a>
+
+        <a href="lista.html" onclick="guardarMateria('Estructura de datos')">
+
+            <div class="class-card">
+                <div class="class-header" style="background-color: #C00C09;"></div>
+                <div class="class-details">
+                    <div class="class-title">Estructura de datos</div>
+                </div>
             </div>
-        </div>
+        </a>
+
     </div>
 </div>
 
