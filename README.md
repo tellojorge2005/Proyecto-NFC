@@ -32,17 +32,7 @@ Este proyecto permite gestionar la asistencia de estudiantes mediante el uso de 
   - MySQL para almacenar estudiantes, materias y registros de asistencia.
 
 ## Cómo usar
-1. **Configuración del entorno**:
-   - Configura una base de datos MySQL y actualiza el archivo `application.properties` con las credenciales correctas.
-   - Crea las tablas necesarias siguiendo el modelo definido en el proyecto.
-
-2. **Ejecutar el proyecto**:
-   - Usa un IDE como IntelliJ para ejecutar el backend.
-   - Sirve los archivos HTML y JavaScript en un servidor local.
-
-3. **Pruebas**:
-   - Registra un estudiante desde el formulario.
-   - Usa una tarjeta NFC para validar asistencia en tiempo real.
+[Manual de Usuario.pdf](https://github.com/user-attachments/files/17950237/Manual.de.Usuario.pdf)
 
 ## Contribuidores
 - Kevin Rucoba Moreno: Desarrollo e implentación del backend y frontend.🧑‍💻
