@@ -285,3 +285,30 @@ th {
 .with70 {
     width: 70%;
 }
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    display: inline-flex; /* Esto activa Flexbox */
+    align-items: center;  /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--primario); /* Fondo verde */
+    border-color: var(--primario);
+}
+
+input[type="checkbox"]:checked::after {
+    content: '✔'; /* Palomita */
+    color: white;
+    font-size: 10px;
+    line-height: 1;
+}
+

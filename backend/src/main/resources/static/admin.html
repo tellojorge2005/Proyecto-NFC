@@ -15,28 +15,47 @@
 </head>
 <body class="fondo-blanco">
 <header>
-    <div class="barra2"></div>
-    <div class="barra ">
+    <div class="barra2 barra-verde-secundario"></div>
+    <div class="barra barra-verde-primario">
         <div class="contenedor logoTecmi"><a href="login.html"><img src="img/logoTecmilenio.png" alt="Logo Tecmilenio"></a></div>
     </div>
 </header>
 <div class="contenedor centrar">
-    <form class="formulario">
-        <input type="text" placeholder="Nombre completo" class="campo-entrada">
-        <input type="text" placeholder="Apellidos" class="campo-entrada">
-        <input type="text" placeholder="Grado academico" class="campo-entrada">
-        <input type="text" placeholder="Semestre" class="campo-entrada">
-        <input type="text" placeholder="Matricula" class="campo-entrada">
-        <input type="tel" placeholder="Teléfono" class="campo-entrada">
-        <input type="email" placeholder="Correo" class="campo-entrada">
-        <input type="password" placeholder="Contraseña" class="campo-entrada">
-        <input type="text" placeholder="NFC" class="campo-entrada">
+    <form class="formulario" onsubmit="enviarFormulario(event)">
+        <input type="text" id="nombre" placeholder="Nombre completo" class="campo-entrada">
+        <input type="text" id="apellidos" placeholder="Apellidos" class="campo-entrada">
+        <input type="text" id="grado" placeholder="Grado academico" class="campo-entrada">
+        <input type="text" id="semestre" placeholder="Semestre" class="campo-entrada">
+        <input type="text" id="matricula" placeholder="Matricula" class="campo-entrada">
+        <input type="tel" id="telefono" placeholder="Teléfono" class="campo-entrada">
+        <input type="email" id="correo" placeholder="Correo" class="campo-entrada">
+        <input type="password" id="contraseña" placeholder="Contraseña" class="campo-entrada">
+
+        <select id="materia" class="campo-entrada ">
+            <option value="" >Seleccione una materia</option>
+            <option value="Introducción a la ingeniería de software">Introducción a la ingeniería de software</option>
+            <option value="Fundamentos de programación">Fundamentos de programación</option>
+            <option value="Estructura de datos">Estructura de datos</option>
+        </select>
+
+        <select id="campus" class="campo-entrada">
+            <option value="">Seleccione un campus</option>
+            <option value="Campus San Luis">Campus San Luis</option>
+            <option value="Campus Las Torres">Campus Las Torres</option>
+            <option value="Campus Tampico">Campus Tampico</option>
+            <option value="Campus Reforma">Campus Reforma</option>
+            <option value="Campus Tampico">Campus Tampico</option>
+            <option value="Campus Toluca">Campus Toluca</option>
+
+        </select>
+
+        <input type="text" id="nfc" placeholder="Esperando UID..." class="campo-entrada" readonly>
         <label for="subir-foto" class="boton-subir-foto">Subir foto</label>
         <input type="file" id="subir-foto" class="input-file">
         <button type="submit" class="boton-registrar">Registrar</button>
     </form>
 </div>
-
+<script src="js/formulario.js"></script>
 </body>
 
 </html>

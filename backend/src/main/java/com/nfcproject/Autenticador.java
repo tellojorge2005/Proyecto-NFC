@@ -4,7 +4,7 @@ import java.sql.*;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Autenticador {
+public class    Autenticador {
 
     public String authenticateUser(String usuario, String contra) {
         String rol = "invalido"; // Valor predeterminado si la autenticación falla

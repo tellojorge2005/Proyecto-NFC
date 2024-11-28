@@ -3,6 +3,7 @@ package com.nfcproject;
 import javax.smartcardio.*;
 import java.sql.*;
 import java.util.List;
+import java.util.Base64;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,10 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import java.util.Map;
-import org.springframework.beans.factory.annotation.Autowired;
 import java.util.HashMap;
-
-import java.util.Base64; // Importa esta clase para la codificación en Base64
+import org.springframework.beans.factory.annotation.Autowired;
 
 @SpringBootApplication
 @RestController
@@ -61,28 +60,29 @@ public class Main {
             resultSet = statement.executeQuery(query);
 
             if (resultSet.next()) {
-                // Si se encuentra, devuelve los datos del alumno en formato JSON
+                // Recuperar los datos necesarios de la base de datos
                 String nombre = resultSet.getString("nombre");
                 String apellidos = resultSet.getString("apellidos");
                 String matricula = resultSet.getString("matricula");
-                String mimeType = resultSet.getString("mime_type"); // Recupera el tipo MIME de la base de datos
-                byte[] fotoBytes = resultSet.getBytes("fotografia"); // Recupera los bytes de la imagen
+                String mimeType = resultSet.getString("mime_type");
+                byte[] fotoBytes = resultSet.getBytes("fotografia");
                 String fotografiaBase64 = "data:" + mimeType + ";base64," + Base64.getEncoder().encodeToString(fotoBytes);
                 String gradoAcademico = resultSet.getString("grado_academico");
                 String campus = resultSet.getString("campus");
 
                 card.disconnect(false);
 
+                // Retornar los datos en formato JSON
                 return String.format(
                         "{\"nombre\": \"%s\", \"apellidos\": \"%s\", \"matricula\": \"%s\", \"fotografia\": \"%s\", \"grado_academico\": \"%s\", \"campus\": \"%s\"}",
                         nombre, apellidos, matricula, fotografiaBase64, gradoAcademico, campus);
             } else {
-                // Si no se encuentra el UID, devolver "Acceso denegado"
+                // Si no se encuentra el UID, devolver mensaje de acceso denegado
                 card.disconnect(false);
                 return "{\"mensaje\": \"Acceso denegado\"}";
             }
-
         } catch (SQLException | CardException e) {
+            e.printStackTrace();
             return "{\"error\": \"" + e.getMessage() + "\"}";
         } finally {
             try {
@@ -94,6 +94,7 @@ public class Main {
             }
         }
     }
+
     @Autowired
     private Autenticador autenticador;
 
@@ -107,7 +108,7 @@ public class Main {
         Map<String, String> response = new HashMap<>();
         if (!"invalido".equals(rol)) {
             response.put("mensaje", "Autenticación exitosa");
-            response.put("rol", rol); // Devolver el rol del usuario
+            response.put("rol", rol);
         } else {
             response.put("mensaje", "Credenciales incorrectas");
         }
