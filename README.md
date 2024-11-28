@@ -42,4 +42,5 @@ Este proyecto permite gestionar la asistencia de estudiantes mediante el uso de 
 
 ---
 
-¡Gracias por revisar nuestro proyecto! 🎉
+¡Gracias por revisar nuestro proyecto! 🎉..
+
